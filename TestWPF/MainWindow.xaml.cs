@@ -38,7 +38,6 @@ namespace TestWPF
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            contacts[0].FirstName += "a";
             contacts.Add(new Contact());
             ContactDetailWindow add = new ContactDetailWindow(ContactDetailWindow.Mode.Read, contacts[contacts.Count - 1]);
             add.Show();
