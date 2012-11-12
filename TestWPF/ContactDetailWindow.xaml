@@ -4,15 +4,18 @@
         Title="Contact Detail"
         MinHeight="290"
         MaxHeight="290"
-        Width="320" SizeToContent="Height">
+        MinWidth="320"
+        Width="320"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox Height="23" Margin="86,12,12,0" MinWidth="200" Name="firstNameTextBox" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="86,41,12,0" MinWidth="200" Name="lastNameTextBox" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="86,70,12,0" MinWidth="200" Name="phoneTextBox" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="86,99,12,0" MinWidth="200" Name="addressTextBox" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="86,128,12,0" MinWidth="200" Name="cityTextBox" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="86,157,12,0" MinWidth="200" Name="stateTextBox" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="86,186,12,0" MinWidth="200" Name="zipTextBox" VerticalAlignment="Top" />
+        <TextBox Height="23" Margin="86,12,12,0" MinWidth="200" Name="firstNameTextBox" VerticalAlignment="Top" Text="{Binding Path=FirstName}" />
+        <TextBox Height="23" Margin="86,41,12,0" MinWidth="200" Name="lastNameTextBox" VerticalAlignment="Top" Text="{Binding Path=LastName}" />
+        <TextBox Height="23" Margin="86,70,12,0" MinWidth="200" Name="phoneTextBox" VerticalAlignment="Top" Text="{Binding Path=Phone}" />
+        <TextBox Height="23" Margin="86,99,12,0" MinWidth="200" Name="addressTextBox" VerticalAlignment="Top" Text="{Binding Path=Address}" />
+        <TextBox Height="23" Margin="86,128,12,0" MinWidth="200" Name="cityTextBox" VerticalAlignment="Top" Text="{Binding Path=City}" />
+        <TextBox Height="23" Margin="86,157,12,0" MinWidth="200" Name="stateTextBox" VerticalAlignment="Top" Text="{Binding Path=State}" />
+        <TextBox Height="23" Margin="86,186,12,0" MinWidth="200" Name="zipTextBox" VerticalAlignment="Top" Text="{Binding Path=Zip}" />
         
         <Label Content="First Name" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="firstNameLabel" VerticalAlignment="Top" />
         <Label Content="Last Name" Height="28" HorizontalAlignment="Left" Margin="12,41,0,0" Name="lastNameLabel" VerticalAlignment="Top" />

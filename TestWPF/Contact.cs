@@ -127,9 +127,25 @@ namespace TestWPF
             this._LastName = last;
         }
 
+        public Contact(string first, string last, int? phone, string address, string city, string state, int? zip)
+        {
+            this._FirstName = first;
+            this._LastName = last;
+            this._Phone = phone;
+            this._Address = address;
+            this._City = city;
+            this._State = state;
+            this._Zip = zip;
+        }
+
         public override string ToString()
         {
             return this.FullName;
+        }
+
+        public Contact Clone()
+        {
+            return new Contact(this.FirstName, this.LastName, this.Phone, this.Address, this.City, this.State, this.Zip);
         }
 
         protected void OnPropertyChanged(string name)
@@ -140,6 +156,7 @@ namespace TestWPF
                 handler(this, new PropertyChangedEventArgs(name));
             }
         }
+
 
     }
 }

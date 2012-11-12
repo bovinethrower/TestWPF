@@ -39,16 +39,16 @@ namespace TestWPF
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             contacts.Add(new Contact());
-            ContactDetailWindow add = new ContactDetailWindow(ContactDetailWindow.Mode.Read, contacts[contacts.Count - 1]);
+            ContactDetailWindow add = new ContactDetailWindow(ContactDetailWindow.Mode.Add, contacts[contacts.Count - 1]);
             add.Show();
             // show "please select a contact"
         }
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
-            if (contactDataGrid.SelectedIndex >= 0 && contactDataGrid.SelectedIndex < contacts.Count)
+            if(contactDataGrid.SelectedValue != null)
             {
-                ContactDetailWindow edit = new ContactDetailWindow(ContactDetailWindow.Mode.Edit, contacts[contactDataGrid.SelectedIndex]);
+                ContactDetailWindow edit = new ContactDetailWindow(ContactDetailWindow.Mode.Edit, contactDataGrid.SelectedValue as Contact);
                 edit.Show();
             }
             // show "please select a contact"
@@ -56,9 +56,9 @@ namespace TestWPF
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (contactDataGrid.SelectedIndex >= 0 && contactDataGrid.SelectedIndex < contacts.Count)
+            if (contactDataGrid.SelectedValue != null)
             {
-                contacts.RemoveAt(contactDataGrid.SelectedIndex);
+                contacts.Remove(contactDataGrid.SelectedValue as Contact);
             }
             // show "please select a contact"
         }
